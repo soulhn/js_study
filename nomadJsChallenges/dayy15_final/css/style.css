@@ -1,0 +1,17 @@
+.hidden{
+  display: none;
+}
+
+body{
+  margin-top: 10%;
+  height: 80vh;
+  width: 99%;
+  background-repeat: no-repeat;
+  text-align: center;
+  background-position: center;
+  background-size: cover;
+}
+
+ul{
+  list-style: none;
+}
