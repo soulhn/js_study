@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+<body>
+  <script> 
+    function printLang(code){
+      return printLang._lang[code]
+    }
+    printLang._lang = {
+      ko : '한국어',
+      en : '영어',
+      ja : '일본어',
+      fr : '프랑스어',
+      es : '스페인어'
+    }
+    console.log(printLang("ko")) //한국어
+    console.log(printLang('en')) //영어
+    
+  </script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+<body>
+  <script> 
+   const max = function(array){
+    // console.log("초깃값" + array)
+    let output = array[0]
+    // console.log("ouput = " + output)
+    for(const maxNum of array) {
+      // console.log("in ouput = " + output)
+      // console.log("maxNum = " + maxNum)
+      if (output<maxNum){
+        output = maxNum
+      }
+    }
+    return output
+   }
+     console.log(max([1,2,3,4]))
+  </script>
+</body>
+</html>
