@@ -26,7 +26,9 @@
     <button onclick="displayHadler('block', '알림창2')">버튼2</button>
 
     <script>
-      document.getElementById("close").addEventListener("click", function () {});
+      document.getElementById("close").addEventListener("click", function () {
+        document.querySelector(".alert-box").style.display = "none";
+      });
 
       function displayHadler(state, text) {
         document.getElementById("alert").style.display = state;
