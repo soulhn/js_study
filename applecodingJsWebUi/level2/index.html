@@ -28,7 +28,7 @@
         height: 100%;
         position: fixed;
         background: rgba(0, 0, 0, 0.5);
-        z-index: 5;
+        z-index: 6;
         padding: 30px;
         /* display: none;과 visibility : hidden; 동일 (애니메이션 줄 때 사용)*/
         visibility: hidden;
@@ -228,6 +228,23 @@
         console.log(picNum);
         document.querySelector(".slide-container").style.transform = `translateX(-${picNum}00vw)`;
       });
+
+      //모달창 배경 클릭 시 모달창 닫기
+      document.querySelector(".black-bg").addEventListener("click", function (e) {
+        console.log(e.target);
+        console.log(document.querySelector(".black-bg"));
+        if (e.target === document.querySelector(".black-bg")) {
+          document.querySelector(".black-bg").classList.remove("show-modal");
+        }
+      });
+
+      //유용한 함수 예제
+      // document.querySelector("").addEventListener("click", function (e) {
+      //   e.target; //유저가 실제로 누른 것(이벤트 발생한 곳)
+      //   e.currentTarget; //이벤트 리스너 달린 곳(this)
+      //   e.preventDefault(); //이벤트 기본 동작 막아줌
+      //   e.stopPropagation(); //상위요소로 이벤트 버블링 방지
+      // });
     </script>
   </body>
 </html>
