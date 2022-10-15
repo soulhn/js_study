@@ -9,4 +9,8 @@ for (let i = 0; i < 3; i++) {
     });
 }
 
-console.log(document.querySelectorAll(".tab-button").length);
+var car = ["소나타", 50000, "white"];
+var car2 = { name: "소나타", price: [50000, 30000, 40000] };
+
+document.querySelector("#productName").innerHTML = car2.name;
+document.querySelector("#productPrice").innerHTML = car2.price;
