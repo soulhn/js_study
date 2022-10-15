@@ -66,6 +66,7 @@
       <select class="form-select mt-2">
         <option>모자</option>
         <option>셔츠</option>
+        <option>바지</option>
       </select>
 
       <select class="form-select mt-2 form-hide">
@@ -97,14 +98,34 @@
     <!-- 부트스트랩 -->
     <!-- select 코드 -->
     <script>
-      document.querySelectorAll(".form-select")[0].addEventListener("input", function(){
-        console.log(document.querySelectorAll(".form-select")[0].value);
-      })
-
-
-            if(){
-              document.querySelectorAll(".form-select")[1].classList.remove("form-hide")
-            }
+      let pants = [28, 30, 32];
+      document.querySelectorAll(".form-select")[0].addEventListener("input", function (e) {
+        let value = e.currentTarget.value;
+        if (value === "셔츠") {
+          let option2 = `<option>90</option>
+          <option>95</option>
+          <option>100</option>`;
+          document.querySelectorAll(".form-select")[1].classList.remove("form-hide");
+          document.querySelectorAll(".form-select")[1].innerHTML = option2;
+        }
+        if (value === "모자") {
+          document.querySelectorAll(".form-select")[1].classList.add("form-hide");
+        }
+        if (value === "바지") {
+          document.querySelectorAll(".form-select")[1].classList.remove("form-hide");
+          document.querySelectorAll(".form-select")[1].innerHTML = "";
+          pants.forEach((pant, i) => {
+            document.querySelectorAll(".form-select")[1].insertAdjacentHTML("beforeend", `<option>${pant}</option>`);
+          });
+          // let option1 = `<option>28</option>
+          // <option>30</option>`;
+          // document.querySelectorAll(".form-select")[1].classList.remove("form-hide");
+          // document.querySelectorAll(".form-select")[1].innerHTML = option1;
+        }
+      });
+      // let template1 = "<p>가자가자</p>";
+      // document.querySelector("#idid").insertAdjacentHTML("beforeend", template1);
+      //문자형 HTML 넣어주는 함수, 첫번째 파라미터 : 넣을 위치
     </script>
 
     <script src="tabMake.js"></script>
