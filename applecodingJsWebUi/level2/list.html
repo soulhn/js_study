@@ -50,6 +50,22 @@
         document.querySelectorAll(".card-body h5")[i].innerHTML = products[i].title;
         document.querySelectorAll(".card-body p")[i].innerHTML = "가격 : " + products[i].price;
       }
+
+      $.get("https://codingapple1.github.io/hello.txt")
+        .done(function (data) {
+          console.log(data);
+        })
+        .fail(function () {
+          console.log("XXXX");
+        });
+
+      $.get("https://codingapple1.github.io/price.json")
+        .done(function (data) {
+          console.log(data.price);
+        })
+        .fail(function () {
+          console.log("XXXX");
+        });
     </script>
     <!-- 탭끝 -->
 
