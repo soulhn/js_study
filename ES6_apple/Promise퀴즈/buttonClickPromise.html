@@ -1,0 +1,23 @@
+<!-- <Button을 누르면 성공 판정하는 Promise, 성공 시 성공 했어요 출력> -->
+<!DOCTYPE html>
+<html lang="en">
+  <head> </head>
+  <body>
+    <button id="btn">클릭</button>
+    <script>
+      const btn = document.querySelector("#btn");
+      console.log(btn);
+
+      async function check() {
+        let btnPromise = new Promise(function (resolve, reject) {
+          btn.addEventListener("click", function () {
+            resolve("성공 나이스 ~");
+          });
+        });
+        let result = await btnPromise;
+        console.log(result);
+      }
+      check();
+    </script>
+  </body>
+</html>
