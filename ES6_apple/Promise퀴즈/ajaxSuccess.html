@@ -1,0 +1,14 @@
+<!-- Q2 Ajax 요청이 성공시 코드 실행 -->
+<script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+
+<script>
+  let ajaxSuccess = new Promise((resolve, reject) => {
+    $.get("https://codingapple1.github.io/hello.txt").done((data) => {
+      resolve(data);
+    });
+  });
+
+  ajaxSuccess.then(function (data) {
+    console.log(data);
+  });
+</script>

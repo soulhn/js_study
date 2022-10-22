@@ -1,0 +1,21 @@
+<!-- Q3 Ajax 요청이 성공시 또 다른 곳으로 Ajax 요청 -->
+<script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+
+<script>
+  function makeAjax(URL) {
+    return new Promise((resolve, reject) => {
+      $.get(URL).done((data) => {
+        resolve(data);
+      });
+    });
+  }
+
+  let ajaxSuccess = makeAjax("https://codingapple1.github.io/hello.txt");
+
+  ajaxSuccess
+    .then(function (data) {
+      console.log(data);
+      return makeAjax("https://codingapple1.github.io/hello2.txt");
+    })
+    .then((data) => console.log(data));
+</script>
